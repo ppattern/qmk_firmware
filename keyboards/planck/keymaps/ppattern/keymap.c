@@ -135,20 +135,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Plover layer (http://opensteno.org)
  * ,-----------------------------------------------------------------------------------.
- * | Exit |      | Ms U |      |      |      |      |      | MS WU|      |      |      |
+ * | Exit |      | Ms WU|      |      |      |      | MS B1| MS U | MS B2| MS B3| MS B4|
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Exit | Ms L | Ms D | Ms R |      |      |      | MS WL| MS WD| MS WR|      |      |
+ * | Exit | Ms WL| Ms WD| Ms WR|      |      |      | MS L | MS D | MS R |      | MS B5|
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | Exit |Ms Ac0|Ms Ac1|Ms Ac2|      |      |      | MS B1| MS B2| MS B3| MS B4| MS B5|
+ * | Exit |Ms Ac0|Ms Ac1|Ms Ac2|      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Exit |      |      |      |             |             | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_PLOVER] = LAYOUT_planck_2x2u(
-    EXT_PLV, KC_NO,   KC_MS_U, KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,   KC_WH_U, KC_NO,   KC_NO,   KC_NO,
-    EXT_PLV, KC_MS_L, KC_MS_D, KC_MS_R, KC_NO, KC_NO, KC_NO, KC_WH_L, KC_WH_D, KC_WH_R, KC_NO,   KC_NO,
-    EXT_PLV, KC_ACL0, KC_ACL1, KC_ACL2, KC_NO, KC_NO, KC_NO, KC_BTN1, KC_BTN2, KC_BTN3, KC_BTN4, KC_BTN5,
-    EXT_PLV, KC_NO,   KC_NO,   KC_NO,       KC_NO,        KC_NO,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    EXT_PLV, KC_NO,   KC_WH_U, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3, KC_BTN4,
+    EXT_PLV, KC_WH_L, KC_WH_D, KC_WH_R, KC_NO,   KC_NO,   KC_NO,   KC_MS_L, KC_MS_D, KC_MS_R, KC_NO,   KC_BTN5,
+    EXT_PLV, KC_ACL0, KC_ACL1, KC_ACL2, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    EXT_PLV, KC_NO,   KC_NO,   KC_NO,        KC_NO,            KC_NO,       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Adjust (Lower + Raise)
