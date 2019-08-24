@@ -6,7 +6,9 @@
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
                                   SONG(COLEMAK_SOUND), \
-                                  SONG(DVORAK_SOUND) \
+                                  SONG(DVORAK_SOUND), \
+                                  SONG(GUITAR_SOUND), \
+                                  SONG(VIOLIN_SOUND) \
                                 }
 #endif
 
@@ -36,4 +38,3 @@
 
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
-
