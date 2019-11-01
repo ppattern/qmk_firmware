@@ -25,6 +25,7 @@ enum planck_layers {
   _DVORAK,
   _VIMQ,
   _VIMD,
+//  _VIMV,
   _LOWER,
   _RAISE,
   _PLOVER,
@@ -40,6 +41,7 @@ enum planck_keycodes {
   EXT_PLV,
   VIMQ,
   VIMD,
+//  VIMV,
   I_VIMD,
   A_VIMD,
   O_VIMD,
@@ -47,7 +49,7 @@ enum planck_keycodes {
   X_VIMD
 };
 
-#define LOWER MO(_LOWER)
+#define LOWER LT(_LOWER, KC_MINS)
 #define RAISE LT(_RAISE, KC_LEFT)
 #define RGUIT RGUI_T(KC_DOWN)
 #define RALTT RALT_T(KC_UP)
@@ -70,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_BSPC,
        KC_ESC,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
 LSFT_T(KC_CAPS), KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  RSFT_T(KC_ENT),
-       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,        KC_SPC,         RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
+       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,    LSFT_T(KC_SPC),     RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
 ),
 
 /* Colemak
@@ -88,7 +90,7 @@ LSFT_T(KC_CAPS), KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_
        KC_TAB,   KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,     KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,  KC_BSPC,
        KC_ESC,   KC_A,     KC_R,     KC_S,     KC_T,     KC_D,     KC_H,     KC_N,     KC_E,     KC_I,     KC_O,     KC_QUOT,
 LSFT_T(KC_CAPS), KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_K,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  RSFT_T(KC_ENT),
-       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,        KC_SPC,         RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
+       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,    LSFT_T(KC_SPC),     RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
 ),
 
 /* Dvorak
@@ -106,7 +108,7 @@ LSFT_T(KC_CAPS), KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_K,     KC_
        KC_TAB,   KC_QUOT,  KC_COMM,  KC_DOT,   KC_P,     KC_Y,     KC_F,     KC_G,     KC_C,     KC_R,     KC_L,     KC_BSPC,
        KC_ESC,   KC_A,     KC_O,     KC_E,     KC_U,     KC_I,     KC_D,     KC_H,     KC_T,     KC_N,     KC_S,     KC_MINS,
 LSFT_T(KC_CAPS), KC_SCLN,  KC_Q,     KC_J,     KC_K,     KC_X,     KC_B,     KC_M,     KC_W,     KC_V,     KC_Z,     RSFT_T(KC_ENT),
-       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,        KC_SPC,         RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
+       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,    LSFT_T(KC_SPC),     RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
 ),
 
 /* VimQ
@@ -124,7 +126,7 @@ LSFT_T(KC_CAPS), KC_SCLN,  KC_Q,     KC_J,     KC_K,     KC_X,     KC_B,     KC_
        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     I_VIMD,   O_VIMD,   KC_P,     KC_BSPC,
        KC_ESC,   A_VIMD,   S_VIMD,   KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
 LSFT_T(KC_CAPS), KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  RSFT_T(KC_ENT),
-       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,        KC_SPC,         RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
+       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,    LSFT_T(KC_SPC),     RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
 ),
 /* VimD
  * ,-----------------------------------------------------------------------------------.
@@ -141,23 +143,23 @@ LSFT_T(KC_CAPS), KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_
        KC_TAB,   KC_QUOT,  KC_COMM,  KC_DOT,   KC_P,     KC_Y,     KC_F,     KC_G,     KC_C,     KC_R,     KC_L,     KC_BSPC,
        X_VIMD,   KC_A,     KC_O,     KC_E,     KC_U,     KC_I,     KC_D,     KC_H,     KC_T,     KC_N,     KC_S,     KC_MINS,
 LSFT_T(KC_CAPS), KC_SCLN,  KC_Q,     KC_J,     KC_K,     KC_X,     KC_B,     KC_M,     KC_W,     KC_V,     KC_Z,     RSFT_T(KC_ENT),
-       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,        KC_SPC,         RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
+       KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,    LSFT_T(KC_SPC),     RSFT_T(KC_ENT),     RAISE,    RGUIT,    RALTT,    RCTLT
 ),
 
 /* Lower
  * ,-----------------------------------------------------------------------------------.
  * |  `~  |  1 ! |  2 @ |  3 # |  4 $ |  5 % |  6 ^ |  7 & |  8 * |  9 ( |  0 ) |  \ | |          Lower
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Tab  |      |      |      |      |      |      |  - _ |  = + | [ {  |  ] } |  / ? |
+ * | Tab  |      |      |      |      |      |      | [ {  |  ] } |  - _ |  = + |  / ? |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|      |      |      |      |      |      |   (  |   )  |   <  |   >  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl |  Opt | GUI  |      |    Space    |    Enter    | Left | Down |  Up  |Right |
+ * | Ctrl |  Opt | GUI  |Lower |    Space    |    Enter    | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_2x2u(
        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_BSLS,
-       KC_TAB,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_MINS,  KC_EQL,   KC_LBRC,  KC_RBRC,  KC_SLSH,
+       KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_LBRC,  KC_RBRC,  KC_MINS,  KC_EQL,   KC_SLSH,
        KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_LPRN,  KC_RPRN,  KC_LT,    KC_GT,    KC_TRNS,
        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,       KC_TRNS,            KC_TRNS,       KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT
 ),
@@ -170,12 +172,12 @@ LSFT_T(KC_CAPS), KC_SCLN,  KC_Q,     KC_J,     KC_K,     KC_X,     KC_B,     KC_
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift| Left | Down |Right |      |      |  Del |  End | PgDn |      |      |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl |  Opt | GUI  |      |    Space    |    Enter    |      | Mute | Vol- | Vol+ |
+ * | Ctrl |  Opt | GUI  |Lower |    Space    |    Enter    |Raise | Mute | Vol- | Vol+ |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_2x2u(
        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,      KC_9,     KC_0,     KC_BSLS,
-       KC_TAB,   KC_NO,    KC_UP,    KC_NO,    KC_NO,    KC_NO,    KC_INS,   KC_HOME,  KC_PGUP,   KC_NO,    KC_NO,    KC_NO,
+       KC_TRNS,  KC_NO,    KC_UP,    KC_NO,    KC_NO,    KC_NO,    KC_INS,   KC_HOME,  KC_PGUP,   KC_NO,    KC_NO,    KC_NO,
        KC_TRNS,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_NO,    KC_NO,    KC_DEL,   KC_END,   KC_PGDN,   KC_NO,    KC_NO,    KC_TRNS,
        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,       KC_TRNS,            KC_TRNS,       KC_TRNS,   KC__MUTE, KC_VOLD,  KC_VOLU
 ),
@@ -188,14 +190,14 @@ LSFT_T(KC_CAPS), KC_SCLN,  KC_Q,     KC_J,     KC_K,     KC_X,     KC_B,     KC_
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Exit |Ms Ac0|Ms Ac1|Ms Ac2|   .  |   =  |   1  |   2  |   3  | MS B3| MS B4| MS B5|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Exit |   ,  | Bksp | Space|    Enter    |      0      | Left | Down |  Up  |Right |
+ * | Exit |Numlck| Bksp | Space|    Enter    |      0      | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_PLOVER] = LAYOUT_planck_2x2u(
        EXT_PLV,  KC_NO,    KC_WH_U,  KC_NO,    KC_PAST,  KC_PSLS,  KC_P7,    KC_P8,    KC_P9,    KC_BTN1,  KC_MS_U,  KC_BTN2,
        EXT_PLV,  KC_WH_L,  KC_WH_D,  KC_WH_R,  KC_PPLS,  KC_PMNS,  KC_P4,    KC_P5,    KC_P6,    KC_MS_L,  KC_MS_D,  KC_MS_R,
        EXT_PLV,  KC_ACL0,  KC_ACL1,  KC_ACL2,  KC_PDOT,  KC_PEQL,  KC_P1,    KC_P2,    KC_P3,    KC_BTN3,  KC_BTN4,  KC_BTN5,
-       EXT_PLV,  KC_NO,    KC_BSPC,  KC_SPC,        KC_ENT,             KC_P0,         KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT
+       EXT_PLV, KC_NUMLOCK,KC_BSPC,  KC_SPC,        KC_ENT,             KC_P0,         KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT
 ),
 
 /* Adjust (Lower + Raise)
@@ -229,38 +231,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case QWERTY:
-      if (record->event.pressed) {
-        print("mode just switched to qwerty and this is a huge string\n");
-        set_single_persistent_default_layer(_QWERTY);
-      }
-      return false;
-      break;
-    case COLEMAK:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_COLEMAK);
-      }
-      return false;
-      break;
-    case DVORAK:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_DVORAK);
-      }
-      return false;
-      break;
-
-    case VIMQ:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_VIMQ);
-      }
-      return false;
-      break;
-    case VIMD:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_VIMD);
-      }
-      return false;
-      break;
     case I_VIMD:
       if (record->event.pressed) {
         SEND_STRING("i");
@@ -298,6 +268,39 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         tap_code(KC_ESC);
       } else {
         set_single_persistent_default_layer(_VIMQ);
+      }
+      return false;
+      break;
+
+    case QWERTY:
+      if (record->event.pressed) {
+        /*print("mode just switched to qwerty and this is a huge string\n");*/
+        set_single_persistent_default_layer(_QWERTY);
+      }
+      return false;
+      break;
+    case COLEMAK:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_COLEMAK);
+      }
+      return false;
+      break;
+    case DVORAK:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_DVORAK);
+      }
+      return false;
+      break;
+
+    case VIMQ:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_VIMQ);
+      }
+      return false;
+      break;
+    case VIMD:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_VIMD);
       }
       return false;
       break;
