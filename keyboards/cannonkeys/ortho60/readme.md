@@ -13,10 +13,10 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 make cannonkeys/ortho60:ppattern
 
-dfu-util -d 1eaf:0003 -a 2 -D "/Users/ppattern/dev/qmk/qmk_firmware/.build/cannonkeys_ortho60_ppattern.bin"
+dfu-util -d 1eaf:0003 -a 2 -D "/Users/ppattern/dev/qmk/qmk_firmware/cannonkeys_ortho60_ppattern.bin"
 
 # Ortho48
 
 make cannonkeys/ortho48:ppattern
 
-dfu-util -d 1eaf:0003 -a 2 -D "/Users/ppattern/dev/qmk/qmk_firmware/.build/cannonkeys_ortho48_ppattern.bin"
+dfu-util -d 1eaf:0003 -a 2 -D "/Users/ppattern/dev/qmk/qmk_firmware/cannonkeys_ortho48_ppattern.bin"
