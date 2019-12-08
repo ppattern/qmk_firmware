@@ -234,7 +234,7 @@ ifeq ($(strip $(BACKLIGHT_CUSTOM_DRIVER)), yes)
     BACKLIGHT_ENABLE = custom
 endif
 
-VALID_BACKLIGHT_TYPES := yes custom
+VALID_BACKLIGHT_TYPES := yes software custom
 
 BACKLIGHT_ENABLE ?= no
 ifneq ($(strip $(BACKLIGHT_ENABLE)), no)
@@ -246,19 +246,22 @@ ifneq ($(strip $(BACKLIGHT_ENABLE)), no)
         CIE1931_CURVE = yes
     endif
 
-
     COMMON_VPATH += $(QUANTUM_DIR)/backlight
     SRC += $(QUANTUM_DIR)/backlight/backlight.c
     OPT_DEFS += -DBACKLIGHT_ENABLE
 
-    ifeq ($(strip $(BACKLIGHT_ENABLE)), custom)
-        OPT_DEFS += -DBACKLIGHT_CUSTOM_DRIVER
-    endif
-
-    ifeq ($(PLATFORM),AVR)
-        SRC += $(QUANTUM_DIR)/backlight/backlight_avr.c
+    ifeq ($(strip $(BACKLIGHT_ENABLE)), software)
+        SRC += $(QUANTUM_DIR)/backlight/backlight_soft.c
     else
-        SRC += $(QUANTUM_DIR)/backlight/backlight_arm.c
+        ifeq ($(strip $(BACKLIGHT_ENABLE)), custom)
+            OPT_DEFS += -DBACKLIGHT_CUSTOM_DRIVER
+        endif
+
+        ifeq ($(PLATFORM),AVR)
+            SRC += $(QUANTUM_DIR)/backlight/backlight_avr.c
+        else
+            SRC += $(QUANTUM_DIR)/backlight/backlight_arm.c
+        endif
     endif
 endif
 
@@ -404,6 +407,16 @@ ifeq ($(strip $(SPACE_CADET_ENABLE)), yes)
   OPT_DEFS += -DSPACE_CADET_ENABLE
 endif
 
+MAGIC_ENABLE ?= yes
+ifeq ($(strip $(MAGIC_ENABLE)), yes)
+    SRC += $(QUANTUM_DIR)/process_keycode/process_magic.c
+    OPT_DEFS += -DMAGIC_KEYCODE_ENABLE
+endif
+
+ifeq ($(strip $(DYNAMIC_MACRO_ENABLE)), yes)
+    SRC += $(QUANTUM_DIR)/process_keycode/process_dynamic_macro.c
+    OPT_DEFS += -DDYNAMIC_MACRO_ENABLE
+endif
 
 ifeq ($(strip $(DIP_SWITCH_ENABLE)), yes)
   SRC += $(QUANTUM_DIR)/dip_switch.c
